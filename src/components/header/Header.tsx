@@ -9,8 +9,11 @@ import {
 import {Box, display} from "@mui/system";
 import OutlinedButton from "../buttons/OutlinedButton";
 import ContainedButton from "../buttons/ContainedButton";
+import {Link} from "@mui/material";
+import {RouteNames} from "../../router";
 
 const pages = [{name: "Home", path: "/"}, {name: "Users", path: "/users"}]
+
 const Header = () => {
     return (
         <StyledAppBar>
@@ -29,8 +32,12 @@ const Header = () => {
                         ))}
                     </Box>
                     <StyledButtonBox>
-                        <OutlinedButton height={40} width={100} title={"Login"}/>
-                        <ContainedButton height={40} width={100} title={"Sign up"}/>
+                        <Link sx={{textDecoration: "none"}} href={RouteNames.LOGIN}>
+                            <OutlinedButton height={40} width={100} title={"Login"}/>
+                        </Link>
+                        <Link sx={{textDecoration: "none"}} href={RouteNames.LOGIN}>
+                            <ContainedButton height={40} width={100} title={"Sign up"}/>
+                        </Link>
                     </StyledButtonBox>
                 </StyledHeaderBox>
             </StyledHeaderContainer>
